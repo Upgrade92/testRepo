@@ -13,6 +13,7 @@ namespace FileDialog_Zach
         [STAThread]
         static void Main(string[] args)
         {
+            string content;
             string pathfile;
 
             OpenFileDialog ofd = new OpenFileDialog();
@@ -29,26 +30,29 @@ namespace FileDialog_Zach
 
             using (StreamReader sr = new StreamReader(ofd.FileName))
             {
-                Console.WriteLine(sr.ReadToEnd());
+                content = sr.ReadToEnd();
+                Console.WriteLine(content);
+                sr.Dispose();
+                sr.Close();
+            }
 
-                SaveFileDialog save = new SaveFileDialog();
+            SaveFileDialog save = new SaveFileDialog();
                 save.FileName = "DefaultOutputName.txt";
                 save.Filter = "Text File | *.txt";
 
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    StreamWriter writer = new StreamWriter(save.OpenFile());
+                    using (StreamWriter writer = new StreamWriter(save.OpenFile()))
+                    {
+                        writer.WriteLine(content);
+                        writer.WriteLine("\n\n This is additional!");
 
-                    writer.Write(sr.ReadToEnd());
-                    writer.Write("\n\n This is additional!");
-                    writer.Dispose();
-                    writer.Close();
+                        writer.Dispose();
+                        writer.Close();
+                    }
 
                 }
-                sr.Dispose();
-                sr.Close();
-            }
-
+                
             Console.ReadLine();
         }
     }
