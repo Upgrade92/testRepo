@@ -1,0 +1,8 @@
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\bin\Debug\StreamReaderZach.exe.config
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\bin\Debug\StreamReaderZach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\bin\Debug\StreamReaderZach.pdb
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\obj\Debug\StreamReaderZach.csproj.AssemblyReference.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\obj\Debug\StreamReaderZach.csproj.SuggestedBindingRedirects.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\obj\Debug\StreamReaderZach.csproj.CoreCompileInputs.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\obj\Debug\StreamReaderZach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\StreamReaderZach\StreamReaderZach\obj\Debug\StreamReaderZach.pdb
