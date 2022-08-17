@@ -26,7 +26,6 @@ namespace FileDialog_Zach
                 MessageBox.Show(ofd.FileName.ToString());
                 pathfile = ofd.FileName;
             }
-            MessageBox.Show(ofd.FileName.ToString());
 
             using (StreamReader sr = new StreamReader(ofd.FileName))
             {
