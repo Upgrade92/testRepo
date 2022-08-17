@@ -27,11 +27,28 @@ namespace FileDialog_Zach
             }
             MessageBox.Show(ofd.FileName.ToString());
 
-            using(StreamReader sr = new StreamReader(ofd.FileName))
+            using (StreamReader sr = new StreamReader(ofd.FileName))
             {
                 Console.WriteLine(sr.ReadToEnd());
+
+                SaveFileDialog save = new SaveFileDialog();
+                save.FileName = "DefaultOutputName.txt";
+                save.Filter = "Text File | *.txt";
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter writer = new StreamWriter(save.OpenFile());
+
+                    writer.Write(sr.ReadToEnd());
+                    writer.Write("\n\n This is additional!");
+                    writer.Dispose();
+                    writer.Close();
+
+                }
+                sr.Dispose();
                 sr.Close();
             }
+
             Console.ReadLine();
         }
     }
