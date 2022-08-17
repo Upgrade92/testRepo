@@ -1,0 +1,8 @@
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\bin\Debug\FileDialog_Zach.exe.config
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\bin\Debug\FileDialog_Zach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\bin\Debug\FileDialog_Zach.pdb
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\obj\Debug\FileDialog_Zach.csproj.AssemblyReference.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\obj\Debug\FileDialog_Zach.csproj.SuggestedBindingRedirects.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\obj\Debug\FileDialog_Zach.csproj.CoreCompileInputs.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\obj\Debug\FileDialog_Zach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\FileDialog_Zach\FileDialog_Zach\obj\Debug\FileDialog_Zach.pdb
