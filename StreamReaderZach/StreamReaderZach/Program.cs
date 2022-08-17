@@ -19,6 +19,7 @@ namespace StreamReaderZach
                 sw.Write(sr.ReadToEnd());
                 sw.WriteLine("\nThis is additional");
             }
+
             MessageBox.Show("Done!");
         }
     }
