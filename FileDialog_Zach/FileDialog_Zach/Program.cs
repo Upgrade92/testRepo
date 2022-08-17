@@ -37,22 +37,20 @@ namespace FileDialog_Zach
             }
 
             SaveFileDialog save = new SaveFileDialog();
-                save.FileName = "DefaultOutputName.txt";
-                save.Filter = "Text File | *.txt";
+            save.FileName = "DefaultOutputName.txt";
+            save.Filter = "Text File | *.txt";
 
-                if (save.ShowDialog() == DialogResult.OK)
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(save.OpenFile()))
                 {
-                    using (StreamWriter writer = new StreamWriter(save.OpenFile()))
-                    {
-                        writer.WriteLine(content);
-                        writer.WriteLine("\n\n This is additional!");
+                    writer.WriteLine(content);
+                    writer.WriteLine("\n\n This is additional!");
 
-                        writer.Dispose();
-                        writer.Close();
-                    }
-
+                    writer.Dispose();
+                    writer.Close();
                 }
-                
+            }             
             Console.ReadLine();
         }
     }
