@@ -16,7 +16,7 @@ namespace VHS_Verleih
             while (true)
             {
                 Helper.PrintMenu();
-                Helper.MakeChoice(Convert.ToInt32(Console.ReadLine()));
+                Helper.MakeChoice(Helper.GetIntInput());
                 
             }
             Console.ReadLine();

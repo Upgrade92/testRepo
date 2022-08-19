@@ -24,18 +24,33 @@ namespace VHS_Verleih
             {
                 case 1:
                     Console.WriteLine("Please key in the VHS-Index you want to borrow");
-                    VHS.BorrowByIndex(Convert.ToInt32(Console.ReadLine()));
+                    VHS.BorrowByIndex(GetIntInput());
                     break;
 
                 case 2:
                     Console.WriteLine("Please key in the VHS-Index you want to return");
-                    VHS.ReturnByIndex(Convert.ToInt32(Console.ReadLine()));
+                    VHS.ReturnByIndex(GetIntInput());
                     break;
 
                 case 3:
                     VHS.ListAll();
                     break;
             }
+        }
+
+        public static int GetIntInput()
+        {
+
+            int input=0;
+            try
+            {
+                input = Convert.ToInt32(Console.ReadLine());
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("only numbers please");
+            }
+            return input;
         }
 
 
