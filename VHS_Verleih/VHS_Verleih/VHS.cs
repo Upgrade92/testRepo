@@ -86,7 +86,7 @@ namespace VHS_Verleih
                     try
                     {
                         VHS.collection[index].Borrowed = false;
-                        Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                        Console.WriteLine($"{VHS.collection[index].title} succesfully returned");
                     }
                     catch (FormatException e)
                     {
