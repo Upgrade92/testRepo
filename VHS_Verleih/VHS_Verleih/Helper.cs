@@ -40,7 +40,6 @@ namespace VHS_Verleih
 
         public static int GetIntInput()
         {
-
             int input=0;
             try
             {
@@ -52,7 +51,5 @@ namespace VHS_Verleih
             }
             return input;
         }
-
-
     }
 }

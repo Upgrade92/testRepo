@@ -11,13 +11,10 @@ namespace VHS_Verleih
         static void Main(string[] args)
         {
             VHS.AddItems();
-            //VHS.ListAll();
-
             while (true)
             {
                 Helper.PrintMenu();
                 Helper.MakeChoice(Helper.GetIntInput());
-                
             }
             Console.ReadLine();
         }
