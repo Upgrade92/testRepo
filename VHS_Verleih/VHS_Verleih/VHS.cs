@@ -54,40 +54,52 @@ namespace VHS_Verleih
         }
         public static void BorrowByIndex(int index)
         {
-            if (VHS.collection[index].borrowed == false)
+            try
             {
-                try
+                if (VHS.collection[index].borrowed == false)
                 {
-                    VHS.collection[index].Borrowed = true;
-                    Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                    try
+                    {
+                        VHS.collection[index].Borrowed = true;
+                        Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("only numbers please!");
+                    }
                 }
-                catch (FormatException e)
+                else
                 {
-                    Console.WriteLine("only numbers please!");
+                    Console.WriteLine("not in house sry!");
                 }
-            }
-            else
+            }catch(ArgumentOutOfRangeException e)
             {
-                Console.WriteLine("not in house sry!");
+                Console.WriteLine("not found!");
             }
         }
         public static void ReturnByIndex(int index)
         {
-            if (VHS.collection[index].borrowed == true)
+            try
             {
-                try
+                if (VHS.collection[index].borrowed == true)
                 {
-                    VHS.collection[index].Borrowed = false;
-                    Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                    try
+                    {
+                        VHS.collection[index].Borrowed = false;
+                        Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("only numbers please!");
+                    }
                 }
-                catch (FormatException e)
+                else
                 {
-                    Console.WriteLine("only numbers please!");
+                    Console.WriteLine("nothing to return");
                 }
-            }
-            else
+            }catch(ArgumentOutOfRangeException e)
             {
-                Console.WriteLine("nothing to return");
+                Console.WriteLine("not found!");
             }
         }
     }
