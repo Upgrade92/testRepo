@@ -1,0 +1,8 @@
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\bin\Debug\VHS_Verleih.exe.config
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\bin\Debug\VHS_Verleih.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\bin\Debug\VHS_Verleih.pdb
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\obj\Debug\VHS_Verleih.csproj.AssemblyReference.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\obj\Debug\VHS_Verleih.csproj.SuggestedBindingRedirects.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\obj\Debug\VHS_Verleih.csproj.CoreCompileInputs.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\obj\Debug\VHS_Verleih.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\VHS_Verleih\VHS_Verleih\obj\Debug\VHS_Verleih.pdb

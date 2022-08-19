@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VHS_Verleih", "VHS_Verleih\VHS_Verleih.csproj", "{21AC345C-D481-44C3-85C5-833C5290F475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21AC345C-D481-44C3-85C5-833C5290F475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AC345C-D481-44C3-85C5-833C5290F475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AC345C-D481-44C3-85C5-833C5290F475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AC345C-D481-44C3-85C5-833C5290F475}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB61B17B-5214-4FE4-98EA-AA50E56A88D3}
+	EndGlobalSection
+EndGlobal
