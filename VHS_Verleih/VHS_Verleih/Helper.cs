@@ -58,12 +58,12 @@ namespace VHS_Verleih
             return input;
         }
 
-        public static void saveFile()
+        public static void SaveFile()
         {
             StringBuilder content = new StringBuilder();
 
             SaveFileDialog save = new SaveFileDialog();
-            save.FileName = "DefaultOutputName.txt";
+            save.FileName = "VHSList.txt";
             save.Filter = "Text File | *.txt";
 
             if (save.ShowDialog() == DialogResult.OK)
