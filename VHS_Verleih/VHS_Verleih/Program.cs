@@ -8,6 +8,7 @@ namespace VHS_Verleih
 {
     internal class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             VHS.AddItems();
