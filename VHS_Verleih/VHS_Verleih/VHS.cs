@@ -51,7 +51,7 @@ namespace VHS_Verleih
 
             foreach (VHS vhs in VHS.collection)
             {
-                Console.WriteLine($" [{VHS.collection.IndexOf(vhs)+1}] \t {vhs.title,-40} \t {vhs.price,-5} \t\t {vhs.genre,-10} \t\t{vhs.borrowed,-10}");
+                Console.WriteLine($" [{VHS.collection.IndexOf(vhs)+1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{vhs.Borrowed,-10}");
             }
         }
         public static void BorrowByIndex(int index)

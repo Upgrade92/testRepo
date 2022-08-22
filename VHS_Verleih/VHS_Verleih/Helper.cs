@@ -13,13 +13,14 @@ namespace VHS_Verleih
         public static void PrintMenu()
         {
             Console.WriteLine("\n Welcome to the VHS-Store!");
-            Console.WriteLine("___________________________");
-            Console.WriteLine(" [1] for borrowing         ");
-            Console.WriteLine(" [2] for returning         ");
-            Console.WriteLine("                           ");
-            Console.WriteLine(" [9] for export Data       ");
-            Console.WriteLine(" [0] to Exit             \n");
+            Console.WriteLine("____________________________");
+            Console.WriteLine(" [1] Borrow                 ");
+            Console.WriteLine(" [2] Return                 ");
+            Console.WriteLine("                            ");
+            Console.WriteLine(" [9] export Data            ");
+            Console.WriteLine(" [0] EXIT                 \n");
         }
+        
 
         public static void MakeChoice(int choice)
         {
