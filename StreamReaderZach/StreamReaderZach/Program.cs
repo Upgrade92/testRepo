@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StreamReaderZach
+namespace StreamReaderZach  // <-- Auf die Bennenungen achten!  Wenn StreamReader benannt wird sollte auch NUR der StreamReader enthalten sein! Kleinigkeit, aber wichtig!
 {
     internal class Program
     {
