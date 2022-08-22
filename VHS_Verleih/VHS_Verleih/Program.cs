@@ -14,10 +14,13 @@ namespace VHS_Verleih
             VHS.AddItems();
             while (true)
             {
+                VHS.ListAll();
                 Helper.PrintMenu();
                 Helper.MakeChoice(Helper.GetIntInput());
+                Helper.PrintMessage("\nPress any key to refresh...");
+                Console.ReadKey();
+                Console.Clear();
             }
-            Console.ReadLine();
         }
     }
 }

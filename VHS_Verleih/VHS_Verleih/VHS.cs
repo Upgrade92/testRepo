@@ -63,20 +63,20 @@ namespace VHS_Verleih
                     try
                     {
                         VHS.collection[index].Borrowed = true;
-                        Console.WriteLine($"{VHS.collection[index].title} succesfully borrowed");
+                        Console.WriteLine($"\n{VHS.collection[index].title} succesfully borrowed");
                     }
                     catch (FormatException e)
                     {
-                        Console.WriteLine("only numbers please!");
+                        Console.WriteLine("\nonly numbers please!");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("not in house sry!");
+                    Console.WriteLine("\nnot in house sry!");
                 }
             }catch(ArgumentOutOfRangeException e)
             {
-                Console.WriteLine("not found!");
+                Console.WriteLine("\nnot found!");
             }
         }
         public static void ReturnByIndex(int index)
@@ -88,20 +88,20 @@ namespace VHS_Verleih
                     try
                     {
                         VHS.collection[index].Borrowed = false;
-                        Console.WriteLine($"{VHS.collection[index].title} succesfully returned");
+                        Console.WriteLine($"\n{VHS.collection[index].title} succesfully returned");
                     }
                     catch (FormatException e)
                     {
-                        Console.WriteLine("only numbers please!");
+                        Console.WriteLine("\nonly numbers please!");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("nothing to return");
+                    Console.WriteLine("\nnothing to return");
                 }
             }catch(ArgumentOutOfRangeException e)
             {
-                Console.WriteLine("not found!");
+                Console.WriteLine("\nnot found!");
             }
         }
 

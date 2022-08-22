@@ -16,9 +16,8 @@ namespace VHS_Verleih
             Console.WriteLine("___________________________");
             Console.WriteLine(" [1] for borrowing         ");
             Console.WriteLine(" [2] for returning         ");
-            Console.WriteLine(" [3] for browsing          ");
-            Console.WriteLine(" [4] for export Data       ");
-            Console.WriteLine("");
+            Console.WriteLine("                           ");
+            Console.WriteLine(" [9] for export Data     \n");
         }
 
         public static void MakeChoice(int choice)
@@ -27,21 +26,28 @@ namespace VHS_Verleih
             {
                 case 1:
                     Console.WriteLine("Please key in the VHS-Index you want to borrow");
-                    VHS.BorrowByIndex(GetIntInput());
+                    VHS.BorrowByIndex(GetIntInput()-1);
                     break;
 
                 case 2:
                     Console.WriteLine("Please key in the VHS-Index you want to return");
-                    VHS.ReturnByIndex(GetIntInput());
+                    VHS.ReturnByIndex(GetIntInput()-1);
                     break;
 
-                case 3:
-                    VHS.ListAll();
+                case 9:
+                    string status = SaveFile();
+                    Console.WriteLine(status);
                     break;
-                case 4:
-                    saveFile();
+
+                default:
+                    Console.WriteLine("no valid choice!");
                     break;
             }
+        }
+
+        public static void PrintMessage(string msg)
+        {
+            Console.WriteLine(msg);
         }
 
         public static int GetIntInput()
@@ -58,7 +64,7 @@ namespace VHS_Verleih
             return input;
         }
 
-        public static void SaveFile()
+        public static string SaveFile()
         {
             StringBuilder content = new StringBuilder();
 
@@ -81,6 +87,11 @@ namespace VHS_Verleih
                     writer.Dispose();
                     writer.Close();
                 }
+                return "successfully saved!";
+            }
+            else
+            {
+                return "saving failed!";
             }
         }
     }

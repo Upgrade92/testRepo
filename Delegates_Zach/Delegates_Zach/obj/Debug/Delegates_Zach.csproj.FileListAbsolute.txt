@@ -1,0 +1,8 @@
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\bin\Debug\Delegates_Zach.exe.config
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\bin\Debug\Delegates_Zach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\bin\Debug\Delegates_Zach.pdb
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\obj\Debug\Delegates_Zach.csproj.AssemblyReference.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\obj\Debug\Delegates_Zach.csproj.SuggestedBindingRedirects.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\obj\Debug\Delegates_Zach.csproj.CoreCompileInputs.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\obj\Debug\Delegates_Zach.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\Delegates_Zach\Delegates_Zach\obj\Debug\Delegates_Zach.pdb
