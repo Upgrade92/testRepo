@@ -17,7 +17,8 @@ namespace VHS_Verleih
             Console.WriteLine(" [1] for borrowing         ");
             Console.WriteLine(" [2] for returning         ");
             Console.WriteLine("                           ");
-            Console.WriteLine(" [9] for export Data     \n");
+            Console.WriteLine(" [9] for export Data       ");
+            Console.WriteLine(" [0] to Exit             \n");
         }
 
         public static void MakeChoice(int choice)
@@ -37,6 +38,10 @@ namespace VHS_Verleih
                 case 9:
                     string status = SaveFile();
                     Console.WriteLine(status);
+                    break;
+
+                case 0:
+                    Environment.Exit(0);
                     break;
 
                 default:
