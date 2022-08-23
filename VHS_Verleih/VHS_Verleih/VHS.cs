@@ -47,12 +47,12 @@ namespace VHS_Verleih
         public static void ListSpecific(List<VHS> collection)
         {
             Console.WriteLine($"Index: \t Title:{null,-40}  Price:{null,-5} \t Genre:{null,-15} Borrowed?{null,-10}");
-            for (int i = 0; i < 53; i++) { Console.Write("__"); }
+            for (int i = 0; i < 55; i++) { Console.Write("__"); }
             Console.WriteLine("\n");
 
             foreach (VHS vhs in collection)
             {
-                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{vhs.Borrowed,-10}");
+                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{Helper.TranslateBorrowed(vhs.Borrowed),-10}");
             }
         }
 

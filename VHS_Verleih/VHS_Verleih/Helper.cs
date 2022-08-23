@@ -96,6 +96,18 @@ namespace VHS_Verleih
             return input;
         }
 
+        public static string TranslateBorrowed(bool borrowed)
+        {
+            if (borrowed == false)
+            {
+                return "in house";
+            }
+            else
+            {
+                return "not in house";
+            }
+        }
+
         public static string SaveFile(List<VHS> exportList)
         {
 
@@ -109,10 +121,10 @@ namespace VHS_Verleih
                 using (StreamWriter writer = new StreamWriter(save.OpenFile()))
                 {
                     writer.WriteLine($"Index: \t Title:{null,-40}  Price:{null,-5} \t Genre:{null,-15} Borrowed?{null,-10}");
-                    for (int i = 0; i < 53; i++) { writer.Write("__"); };
+                    for (int i = 0; i < 55; i++) { writer.Write("__"); };
                     for (int i = 0; i < exportList.Count;i++)
                     {
-                        content.Append($"\n [{VHS.collection.IndexOf(exportList[i])+1}] \t {exportList[i].Title,-40} \t {exportList[i].Price,-5} \t\t {exportList[i].Genre,-10} \t\t{exportList[i].Borrowed,-10}");
+                        content.Append($"\n [{VHS.collection.IndexOf(exportList[i])+1}] \t {exportList[i].Title,-40} \t {exportList[i].Price,-5} \t\t {exportList[i].Genre,-10} \t\t{TranslateBorrowed(exportList[i].Borrowed),-10}");
                     }
                     writer.WriteLine(content);
                     
