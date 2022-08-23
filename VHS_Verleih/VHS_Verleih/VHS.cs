@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace VHS_Verleih
 {
-    abstract internal class VHS
+    abstract internal class VHS : IProduct
     {
         public static List<VHS> collection = new List<VHS>();
         private string title;
@@ -16,7 +16,7 @@ namespace VHS_Verleih
         public VHS(string title, double price)
         {
             Title = title;
-            Price = price;
+            Price = AddTaxes(price);                    //Interface implementation !!!
             collection.Add(this);
         }
 
@@ -52,7 +52,7 @@ namespace VHS_Verleih
 
             foreach (VHS vhs in collection)
             {
-                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10}" +
+                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price.ToString(".##"),-5} \t\t {vhs.Genre,-10}" +
                                   $" \t\t{Helper.TranslateBorrowed(vhs.Borrowed),-10}");
             }
         }
@@ -113,6 +113,15 @@ namespace VHS_Verleih
             return sortedList;
         }
 
+        public double AddTaxes(double price)
+        {
+            return price *= 1.2;
+        }
+    }
+
+    interface IProduct                                  //Interface !!!!
+    {
+        double AddTaxes(double price);
     }
 
     class Fantasy : VHS

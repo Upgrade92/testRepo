@@ -8,8 +8,10 @@ using System.Windows.Forms;
 
 namespace VHS_Verleih
 {
+    public delegate void WriteDelegate<Thing>(Thing thing);
     internal class Helper
     {
+        static WriteDelegate<string> del = (msg) => Console.WriteLine(msg);
         public static void PrintMenu()
         {
             Console.WriteLine("\n Welcome to the VHS-Store!");
@@ -34,12 +36,12 @@ namespace VHS_Verleih
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("Please key in the VHS-Index you want to borrow");
+                    del("Please key in the VHS-Index you want to borrow");
                     VHS.BorrowByIndex(GetIntInput()-1);
                     break;
 
                 case 2:
-                    Console.WriteLine("Please key in the VHS-Index you want to return");
+                    del("Please key in the VHS-Index you want to return");
                     VHS.ReturnByIndex(GetIntInput()-1);
                     break;
 
@@ -64,7 +66,7 @@ namespace VHS_Verleih
                     {
                         status = SaveFile(VHS.collection);
                     }
-                    Console.WriteLine(status);
+                    del(status);
                     break;
 
                 case 0:
@@ -72,7 +74,7 @@ namespace VHS_Verleih
                     break;
 
                 default:
-                    Console.WriteLine("no valid choice!");
+                    del("no valid choice!");
                     break;
             }
         }
@@ -91,7 +93,7 @@ namespace VHS_Verleih
             }
             catch(FormatException e)
             {
-                Console.WriteLine("only numbers please");
+                del("only numbers please");
             }
             return input;
         }
