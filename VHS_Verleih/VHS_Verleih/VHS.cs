@@ -111,6 +111,7 @@ namespace VHS_Verleih
             List<VHS> sortedList = collection.OrderBy(o => o.Price).ToList();
             return sortedList;
         }
+
     }
 
     class Fantasy : VHS

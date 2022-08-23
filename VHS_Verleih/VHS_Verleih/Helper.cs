@@ -55,7 +55,15 @@ namespace VHS_Verleih
                     break;
 
                 case 9:
-                    string status = SaveFile();
+                    string status;
+                    if (VHS.sorted == true)
+                    {
+                        status = SaveFile(VHS.SortByPrice());
+                    }
+                    else
+                    {
+                        status = SaveFile(VHS.collection);
+                    }
                     Console.WriteLine(status);
                     break;
 
@@ -88,10 +96,10 @@ namespace VHS_Verleih
             return input;
         }
 
-        public static string SaveFile()
+        public static string SaveFile(List<VHS> exportList)
         {
-            StringBuilder content = new StringBuilder();
 
+            StringBuilder content = new StringBuilder();
             SaveFileDialog save = new SaveFileDialog();
             save.FileName = "VHSList.txt";
             save.Filter = "Text File | *.txt";
@@ -102,11 +110,12 @@ namespace VHS_Verleih
                 {
                     writer.WriteLine($"Index: \t Title:{null,-40}  Price:{null,-5} \t Genre:{null,-15} Borrowed?{null,-10}");
                     for (int i = 0; i < 53; i++) { writer.Write("__"); };
-                    foreach (VHS vhs in VHS.collection)
+                    for (int i = 0; i < exportList.Count;i++)
                     {
-                        content.Append($"\n [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{vhs.Borrowed,-10}");
+                        content.Append($"\n [{VHS.collection.IndexOf(exportList[i])}] \t {exportList[i].Title,-40} \t {exportList[i].Price,-5} \t\t {exportList[i].Genre,-10} \t\t{exportList[i].Borrowed,-10}");
                     }
                     writer.WriteLine(content);
+                    
 
                     writer.Dispose();
                     writer.Close();
