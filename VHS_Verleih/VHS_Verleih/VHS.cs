@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace VHS_Verleih
 {
@@ -52,7 +48,8 @@ namespace VHS_Verleih
 
             foreach (VHS vhs in collection)
             {
-                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{Helper.TranslateBorrowed(vhs.Borrowed),-10}");
+                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10}" +
+                                  $" \t\t{Helper.TranslateBorrowed(vhs.Borrowed),-10}");
             }
         }
 

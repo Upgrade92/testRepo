@@ -124,7 +124,8 @@ namespace VHS_Verleih
                     for (int i = 0; i < 55; i++) { writer.Write("__"); };
                     for (int i = 0; i < exportList.Count;i++)
                     {
-                        content.Append($"\n [{VHS.collection.IndexOf(exportList[i])+1}] \t {exportList[i].Title,-40} \t {exportList[i].Price,-5} \t\t {exportList[i].Genre,-10} \t\t{TranslateBorrowed(exportList[i].Borrowed),-10}");
+                        content.Append($"\n [{VHS.collection.IndexOf(exportList[i])+1}] \t {exportList[i].Title,-40} \t {exportList[i].Price,-5} " +
+                                       $"\t\t {exportList[i].Genre,-10} \t\t{TranslateBorrowed(exportList[i].Borrowed),-10}");
                     }
                     writer.WriteLine(content);
                     
