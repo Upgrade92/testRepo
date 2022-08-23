@@ -11,24 +11,24 @@ namespace VHS_Verleih
     public delegate void WriteDelegate<Thing>(Thing thing);
     internal class Helper
     {
-        static WriteDelegate<string> del = (msg) => Console.WriteLine(msg);
+        static WriteDelegate<string> write = (msg) => PrintMessage(msg);     // Generic Delegate & Lambda Expression
         public static void PrintMenu()
         {
-            Console.WriteLine("\n Welcome to the VHS-Store!");
-            Console.WriteLine("<------------------------->");
-            Console.WriteLine(" | [1] Borrow              ");
-            Console.WriteLine(" | [2] Return              ");
+            write("\n Welcome to the VHS-Store!");
+            write("<------------------------->");
+            write(" | [1] Borrow              ");
+            write(" | [2] Return              ");
             if (VHS.sorted == false) 
             {
-                Console.WriteLine(" | [3] Sort by Price   ");
+                write(" | [3] Sort by Price   ");
             }
             else 
-            { 
-            Console.WriteLine(" | [3] Sort by Index       "); 
+            {
+                write(" | [3] Sort by Index   "); 
             }
-            Console.WriteLine(" |                         ");
-            Console.WriteLine(" | [9] export Data         ");
-            Console.WriteLine(" | [0] EXIT \n             ");
+            write(" |                         ");
+            write(" | [9] export Data         ");
+            write(" | [0] EXIT \n             ");
         }
 
         public static void MakeChoice(int choice)
@@ -36,12 +36,12 @@ namespace VHS_Verleih
             switch (choice)
             {
                 case 1:
-                    del("Please key in the VHS-Index you want to borrow");
+                    write("Please key in the VHS-Index you want to borrow");
                     VHS.BorrowByIndex(GetIntInput()-1);
                     break;
 
                 case 2:
-                    del("Please key in the VHS-Index you want to return");
+                    write("Please key in the VHS-Index you want to return");
                     VHS.ReturnByIndex(GetIntInput()-1);
                     break;
 
@@ -66,7 +66,7 @@ namespace VHS_Verleih
                     {
                         status = SaveFile(VHS.collection);
                     }
-                    del(status);
+                    write(status);
                     break;
 
                 case 0:
@@ -74,7 +74,7 @@ namespace VHS_Verleih
                     break;
 
                 default:
-                    del("no valid choice!");
+                    write("no valid choice!");
                     break;
             }
         }
@@ -93,7 +93,7 @@ namespace VHS_Verleih
             }
             catch(FormatException e)
             {
-                del("only numbers please");
+                write("only numbers please");
             }
             return input;
         }
