@@ -18,7 +18,7 @@ namespace VHS_Verleih
             Console.WriteLine(" | [2] Return              ");
             if (VHS.sorted == false) 
             {
-                Console.WriteLine(" | [3] Sort by Price       ");
+                Console.WriteLine(" | [3] Sort by Price   ");
             }
             else 
             { 
@@ -77,7 +77,7 @@ namespace VHS_Verleih
             }
         }
 
-        public static void PrintMessage(string msg)
+        public static void PrintMessage<Thing>(Thing msg)           // Generic !!!
         {
             Console.WriteLine(msg);
         }

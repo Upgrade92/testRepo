@@ -38,6 +38,10 @@ namespace VHS_Verleih
             Education edu1 = new Education("C# for beginners", 17.99);
             Education edu2 = new Education("C# for advanced", 18.99);
             Education edu3 = new Education("C# for experts", 19.99);
+
+            Romance romance1 = new Romance("Love Stories 1", 12.49);
+            Romance romance2 = new Romance("Love Stories 2", 13.49);
+            Romance romance3 = new Romance("Love Stories 3", 14.49);
         }
 
         public static void ListSpecific(List<VHS> collection)
@@ -105,7 +109,7 @@ namespace VHS_Verleih
         }
         public static List<VHS> SortByPrice() 
         {
-            List<VHS> sortedList = collection.OrderBy(o => o.Price).ToList();
+            List<VHS> sortedList = collection.OrderBy(o => o.Price).ToList();       // Lambda Expression !!
             return sortedList;
         }
 
@@ -132,6 +136,14 @@ namespace VHS_Verleih
         public Education(string title, double price) : base(title, price)
         {
             this.Genre = "Education";
+        }
+    }
+
+    class Romance : VHS
+    {
+        public Romance(string title, double price) : base(title, price)
+        {
+            this.Genre = "Romance";
         }
     }
 }
