@@ -14,7 +14,14 @@ namespace VHS_Verleih
             VHS.AddItems();
             while (true)
             {
-                VHS.ListAll();
+                if (VHS.sorted == false)
+                {
+                    VHS.ListSpecific(VHS.collection);
+                }
+                else
+                {
+                    VHS.ListSpecific(VHS.SortByPrice());
+                }
                 Helper.PrintMenu();
                 Helper.MakeChoice(Helper.GetIntInput());
                 Helper.PrintMessage("\nPress any key to refresh...");

@@ -13,14 +13,21 @@ namespace VHS_Verleih
         public static void PrintMenu()
         {
             Console.WriteLine("\n Welcome to the VHS-Store!");
-            Console.WriteLine("____________________________");
-            Console.WriteLine(" [1] Borrow                 ");
-            Console.WriteLine(" [2] Return                 ");
-            Console.WriteLine("                            ");
-            Console.WriteLine(" [9] export Data            ");
-            Console.WriteLine(" [0] EXIT                 \n");
+            Console.WriteLine("<------------------------->");
+            Console.WriteLine(" | [1] Borrow              ");
+            Console.WriteLine(" | [2] Return              ");
+            if (VHS.sorted == false) 
+            {
+                Console.WriteLine(" | [3] Sort by Price       ");
+            }
+            else 
+            { 
+            Console.WriteLine(" | [3] Sort by Index       "); 
+            }
+            Console.WriteLine(" |                         ");
+            Console.WriteLine(" | [9] export Data         ");
+            Console.WriteLine(" | [0] EXIT \n             ");
         }
-        
 
         public static void MakeChoice(int choice)
         {
@@ -34,6 +41,17 @@ namespace VHS_Verleih
                 case 2:
                     Console.WriteLine("Please key in the VHS-Index you want to return");
                     VHS.ReturnByIndex(GetIntInput()-1);
+                    break;
+
+                case 3:
+                    if(VHS.sorted == false)
+                    {
+                        VHS.sorted = true;
+                    }
+                    else
+                    {
+                        VHS.sorted = false;
+                    }
                     break;
 
                 case 9:

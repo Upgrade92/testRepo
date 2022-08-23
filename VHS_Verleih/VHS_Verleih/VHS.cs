@@ -15,6 +15,7 @@ namespace VHS_Verleih
         private double price;
         private string genre;
         private bool borrowed = false;
+        public static bool sorted = false;
 
         public VHS(string title, double price)
         {
@@ -43,17 +44,18 @@ namespace VHS_Verleih
             Education edu3 = new Education("C# for experts", 19.99);
         }
 
-        public static void ListAll()
+        public static void ListSpecific(List<VHS> collection)
         {
             Console.WriteLine($"Index: \t Title:{null,-40}  Price:{null,-5} \t Genre:{null,-15} Borrowed?{null,-10}");
-            for(int i = 0; i < 53; i++) { Console.Write("__"); }
-            Console.WriteLine("\n");           
+            for (int i = 0; i < 53; i++) { Console.Write("__"); }
+            Console.WriteLine("\n");
 
-            foreach (VHS vhs in VHS.collection)
+            foreach (VHS vhs in collection)
             {
-                Console.WriteLine($" [{VHS.collection.IndexOf(vhs)+1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{vhs.Borrowed,-10}");
+                Console.WriteLine($" [{VHS.collection.IndexOf(vhs) + 1}] \t {vhs.Title,-40} \t {vhs.Price,-5} \t\t {vhs.Genre,-10} \t\t{vhs.Borrowed,-10}");
             }
         }
+
         public static void BorrowByIndex(int index)
         {
             try
@@ -104,7 +106,11 @@ namespace VHS_Verleih
                 Console.WriteLine("\nnot found!");
             }
         }
-
+        public static List<VHS> SortByPrice() 
+        {
+            List<VHS> sortedList = collection.OrderBy(o => o.Price).ToList();
+            return sortedList;
+        }
     }
 
     class Fantasy : VHS
