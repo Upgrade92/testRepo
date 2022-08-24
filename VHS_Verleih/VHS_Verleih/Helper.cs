@@ -28,11 +28,14 @@ namespace VHS_Verleih
             }
             write(" |                         ");
             write(" | [9] export Data         ");
-            write(" | [0] EXIT \n             ");
+            write(" | [Crtl + C] EXIT \n      ");
         }
 
         public static void MakeChoice(int choice)
         {
+            Button button = new Button();
+            var key = choice;
+
             switch (choice)
             {
                 case 1:
@@ -69,7 +72,7 @@ namespace VHS_Verleih
                     write(status);
                     break;
 
-                case 0:
+                //case 0:
                     Environment.Exit(0);
                     break;
 
@@ -78,6 +81,8 @@ namespace VHS_Verleih
                     break;
             }
         }
+
+
 
         public static void PrintMessage<Thing>(Thing msg)           // Generic !!!
         {
@@ -141,5 +146,7 @@ namespace VHS_Verleih
                 return "saving failed!";
             }
         }
+       
     }
+    
 }

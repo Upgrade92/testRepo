@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VHS_Verleih
 {
     internal class Program
     {
+
+        public delegate void OnEscPressed(object sender);
         [STAThread]
         static void Main(string[] args)
         {
+
             VHS.AddItems();
+            Console.CancelKeyPress += new ConsoleCancelEventHandler(myHandler);
+
+
             while (true)
             {
                 if (VHS.sorted == false)
@@ -28,6 +30,15 @@ namespace VHS_Verleih
                 Console.ReadKey();
                 Console.Clear();
             }
+        }
+        protected static void myHandler(object sender, ConsoleCancelEventArgs args)
+        {
+            Console.WriteLine("Event fired!");
+            Console.WriteLine("Colsing in 3 seconds");
+            System.Threading.Thread.Sleep(3000);
+
+
+            Environment.Exit(0);
         }
     }
 }

@@ -1,0 +1,8 @@
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\bin\Debug\EventExample.exe.config
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\bin\Debug\EventExample.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\bin\Debug\EventExample.pdb
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\obj\Debug\EventExample.csproj.AssemblyReference.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\obj\Debug\EventExample.csproj.SuggestedBindingRedirects.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\obj\Debug\EventExample.csproj.CoreCompileInputs.cache
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\obj\Debug\EventExample.exe
+C:\Users\14632\source\repos\Upgrade92\testRepo\EventExample\EventExample\obj\Debug\EventExample.pdb
