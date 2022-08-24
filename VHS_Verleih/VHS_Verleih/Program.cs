@@ -13,7 +13,6 @@ namespace VHS_Verleih
             VHS.AddItems();
             Console.CancelKeyPress += new ConsoleCancelEventHandler(myHandler);
 
-
             while (true)
             {
                 if (VHS.sorted == false)
@@ -26,7 +25,6 @@ namespace VHS_Verleih
                 }
                 Helper.PrintMenu();
                 Helper.MakeChoice(Helper.GetIntInput());
-                Helper.PrintMessage("\nPress any key to refresh...");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -34,10 +32,8 @@ namespace VHS_Verleih
         protected static void myHandler(object sender, ConsoleCancelEventArgs args)
         {
             Console.WriteLine("Event fired!");
-            Console.WriteLine("Colsing in 3 seconds");
+            Console.WriteLine("Closing in 3 seconds");
             System.Threading.Thread.Sleep(3000);
-
-
             Environment.Exit(0);
         }
     }

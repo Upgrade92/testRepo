@@ -35,50 +35,54 @@ namespace VHS_Verleih
         {
             Button button = new Button();
             var key = choice;
-
-            switch (choice)
+            if (choice != 0)
             {
-                case 1:
-                    write("Please key in the VHS-Index you want to borrow");
-                    VHS.BorrowByIndex(GetIntInput()-1);
-                    break;
-
-                case 2:
-                    write("Please key in the VHS-Index you want to return");
-                    VHS.ReturnByIndex(GetIntInput()-1);
-                    break;
-
-                case 3:
-                    if(VHS.sorted == false)
+                try {
+                    switch (choice)
                     {
-                        VHS.sorted = true;
-                    }
-                    else
-                    {
-                        VHS.sorted = false;
-                    }
-                    break;
+                        case 1:
+                            write("Please key in the VHS-Index you want to borrow");
+                            VHS.BorrowByIndex(GetIntInput() - 1);
+                            break;
 
-                case 9:
-                    string status;
-                    if (VHS.sorted == true)
-                    {
-                        status = SaveFile(VHS.SortByPrice());
-                    }
-                    else
-                    {
-                        status = SaveFile(VHS.collection);
-                    }
-                    write(status);
-                    break;
+                        case 2:
+                            write("Please key in the VHS-Index you want to return");
+                            VHS.ReturnByIndex(GetIntInput() - 1);
+                            break;
 
-                //case 0:
-                    Environment.Exit(0);
-                    break;
+                        case 3:
+                            if (VHS.sorted == false)
+                            {
+                                VHS.sorted = true;
+                            }
+                            else
+                            {
+                                VHS.sorted = false;
+                            }
+                            break;
 
-                default:
-                    write("no valid choice!");
-                    break;
+                        case 9:
+                            string status;
+                            if (VHS.sorted == true)
+                            {
+                                status = SaveFile(VHS.SortByPrice());
+                            }
+                            else
+                            {
+                                status = SaveFile(VHS.collection);
+                            }
+                            write(status);
+                            break;
+
+                        default:
+                            write("no valid choice!");
+                            break;
+                    }
+                }
+                finally
+                {
+                    write("\nPress any key to refresh...");
+                }
             }
         }
 
