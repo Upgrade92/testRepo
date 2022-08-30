@@ -33,8 +33,6 @@ namespace VHS_Verleih
 
         public static void MakeChoice(int choice)
         {
-            Button button = new Button();
-            var key = choice;
             if (choice != 0)
             {
                 try {
