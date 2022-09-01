@@ -10,21 +10,22 @@
         <ImageBrush ImageSource="/Home.jpg"/>
     </Window.Background>
     <Grid >
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <ListBox x:Name="listBox"
                  d:ItemsSource="{d:SampleData ItemCount=5}" 
-                 Margin="0,0,622,0"
-                 Padding="30" Background="#FF0E2763" FontSize="16"
+                 Margin="0,0,600,0"
+                 Padding="30" Background="#FF0E2763" FontSize="16" SelectionChanged="listBox_SelectionChanged"
                  />
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" 
+        <ListView x:Name="listView"
+                  d:ItemsSource="{d:SampleData ItemCount=5}" 
                   Margin="232,59,195,59"
-                  Padding="0,0,0,0"
-                  Opacity=".7"
+                  Padding="30"
+                  Opacity=".7" IsEnabled="False" 
+                  Grid.RowSpan="1" 
+                  Grid.ColumnSpan="1"
                   >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
         </ListView>
         <Button x:Name="newButton" 
                 Content="New" 
@@ -51,6 +52,15 @@
                 VerticalAlignment="Top" 
                 Width="140" 
                 Height="35" Click="deleteButton_Click"
+                
+        />
+        <Button x:Name="refreshButton" 
+                Content="Refresh" 
+                HorizontalAlignment="Left" 
+                Margin="630,157,0,0" 
+                VerticalAlignment="Top" 
+                Width="140" 
+                Height="35" Click="LoadList"
                 
         />
         <Button x:Name="exitButton" 

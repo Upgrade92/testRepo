@@ -84,36 +84,14 @@ namespace WpfApplication_Zach
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            string username = usernameBox.Text.ToString(); 
-            string password= passwordBox.Password.ToString();
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\14632\source\repos\Upgrade92\testRepo\WpfApplication_Zach\WpfApplication_Zach\Database1.mdf;Integrated Security=True");
+            DoLogin();
+        }
 
-            try
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Return)
             {
-                connection.Open();
-                
-                string querry = "SELECT * FROM [Table] Where Username = '" + username + "' AND Password = '" + password + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(querry, connection);
-
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                UserAccount user = new UserAccount(username, password, Convert.ToInt32(dt.Rows[0][3]));
-
-                if (dt.Rows.Count == 1)
-                {
-                    MessageBox.Show("Login successfully!\n"+user.UserName+"\n"+user.Password+"\n"+user.Permission);
-                    this.Hide();
-                    HomeWindow home = new HomeWindow();
-                    home.Show();
-                }
-                else
-                {
-                    MessageBox.Show("invalid credentials!");
-                }
-            }
-            finally
-            {
-                connection.Close();
+                DoLogin();
             }
         }
 
@@ -122,6 +100,43 @@ namespace WpfApplication_Zach
             System.Windows.Application.Current.Shutdown();
         }
 
+        private void DoLogin()
+        {
+            string username = usernameBox.Text.ToString();
+            string password = passwordBox.Password.ToString();
+            SqlConnection connection = new SqlConnection(new DatabaseHelper().ConnectionString);
+            try
+            {
+                connection.Open();
 
+                string querry = "SELECT * FROM [Table] Where Username = '" + username + "' AND Password = '" + password + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(querry, connection);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                try
+                {
+                    UserAccount user = new UserAccount(username, password, Convert.ToInt32(dt.Rows[0][3]));
+
+                    if (dt.Rows.Count == 1)
+                    {
+                        MessageBox.Show("Login successfully!\n" + user.UserName + "\n" + user.Password + "\n" + user.Permission);
+                        MainWindow mainWindow = this;
+                        mainWindow.Hide();
+                        HomeWindow home = new HomeWindow();
+                        home.Show();
+                    }
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    MessageBox.Show("invalid credentials!");
+                }
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

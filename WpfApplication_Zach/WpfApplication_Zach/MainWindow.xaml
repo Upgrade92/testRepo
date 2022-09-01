@@ -20,7 +20,7 @@
         <TextBox x:Name="usernameBox" 
                  Grid.Column="1" 
                  HorizontalAlignment="Left" 
-                 Margin="212,160,0,0" 
+                 Margin="232,139,0,0" 
                  TextWrapping="Wrap"  
                  VerticalAlignment="Top" 
                  Width="134" 
@@ -32,47 +32,33 @@
         <TextBox x:Name="passwordTextBox" 
                  Grid.Column="1" 
                  HorizontalAlignment="Left"
-                 Margin="212,184,0,0" 
+                 Margin="232,164,0,0" 
                  TextWrapping="Wrap"  
                  VerticalAlignment="Top" 
-                 Width="134" Height="25" 
+                 Width="134" 
+                 Height="25" 
                  TextChanged="PasswordTextChangedHandler" 
                  Visibility="Hidden"
+                 KeyDown="OnKeyDownHandler"
+
         />
 
         <PasswordBox x:Name="passwordBox" 
                      Grid.Column="1" 
                      HorizontalAlignment="Left" 
-                     Margin="212,185,0,0" 
+                     Margin="232,164,0,0" 
                      VerticalAlignment="Top" 
-                     Width="134" Height="25" 
+                     Width="134" 
+                     Height="25" 
                      ToolTip="key in your password" 
                      PasswordChanged="PasswordChangedHandler"
+                     KeyDown="OnKeyDownHandler"            
         />
-
-
-        <Label HorizontalContentAlignment="Center" 
-               Content="User - Login" 
-               HorizontalAlignment="Left" 
-               Margin="199,79,0,0" 
-               VerticalAlignment="Top"
-               Width="165" Grid.Column="1" 
-               FontSize="22" 
-               BorderThickness="1,1,1,1">
-
-            <Label.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7688AB" Offset="1"/>
-                    <GradientStop Color="#FF0056FF" Offset="0"/>
-                </LinearGradientBrush>
-            </Label.Background>
-
-        </Label>
 
         <Button x:Name="loginButton" 
                 Grid.Column="1" Content="Login" 
-                HorizontalAlignment="Left" 
-                Margin="190,232,0,0" 
+                HorizontalAlignment="Center" 
+                Margin="0,211,0,0" 
                 VerticalAlignment="Top" 
                 Width="80" 
                 Click="loginButton_Click"
@@ -82,7 +68,7 @@
                 Grid.Column="1"
                 Content="Cancel" 
                 HorizontalAlignment="Left" 
-                Margin="284,232,0,0" 
+                Margin="304,211,0,0" 
                 VerticalAlignment="Top"
                 Width="80" 
                 Click="cancelButton_Click" 
@@ -92,19 +78,19 @@
                   Grid.Column="1" 
                   Content="show password&#xD;&#xA;" 
                   HorizontalAlignment="Left" 
-                  Margin="269,261,0,0" 
-                  VerticalAlignment="Top" 
+                  Margin="289,240,0,0" 
+                  VerticalAlignment="Top"
+                  IsChecked="True"
                   Unchecked="CheckBox_Unchecked" 
                   Checked="CheckBox_Checked"
         />
-
 
         <Label x:Name="passwordBoxWatermark" 
                Grid.Column="1" 
                HorizontalContentAlignment="Center" 
                Content="Password" 
                HorizontalAlignment="Left" 
-               Margin="284,184,0,0" 
+               Margin="304,163,0,0" 
                VerticalAlignment="Top"
                Width="62"
         />
@@ -114,13 +100,9 @@
                HorizontalContentAlignment="Center" 
                Content="Username" 
                HorizontalAlignment="Left" 
-               Margin="284,158,0,0"
+               Margin="304,137,0,0"
                VerticalAlignment="Top"
                Width="62"
         />
-
-        
-
-
     </Grid>
 </Window>
