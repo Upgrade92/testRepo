@@ -81,29 +81,14 @@ namespace WpfApplication_Zach
             string birthdate = birthdatePicker.ToString();
 
             if (CheckAll())
-            {
-                SqlConnection connection = new SqlConnection(new DatabaseHelper().ConnectionString);
-                try
-                {
-                    connection.Open();
-
-                    string querry = $"INSERT INTO [TablePeople] (Firstname,Lastname,[E-Mail],Geschlecht, Geburtsdatum) VALUES('{firstname}','{lastname}','{email}','{gender}','{birthdate}')";
-                    SqlDataAdapter sda = new SqlDataAdapter(querry, connection);
-                    SqlCommand cmd = new SqlCommand(querry, connection);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("New User saved!");
-                }
-                catch (SqlException) { }
-                finally
-                {
-                    connection.Close();
-                    labelError.Visibility = Visibility.Hidden;
-                }
+            {             
+                new DatabaseHelper().NonQuerry($"INSERT INTO [TablePeople] (Firstname,Lastname,[E-Mail],Geschlecht, Geburtsdatum) VALUES('{firstname}','{lastname}','{email}','{gender}','{birthdate}')");
+                MessageBox.Show("New User saved!");
+                labelError.Visibility = Visibility.Hidden;        
             }
             else { 
                 MessageBox.Show("NoNoNo");
                 labelError.Visibility = Visibility.Visible;
-
             }
         }
         private bool FirstnameFilled()
@@ -176,17 +161,15 @@ namespace WpfApplication_Zach
                 return false;
             }
         }
-
         private bool CheckAll()
         {
-            bool check = false;
-            check = FirstnameFilled();
-            check = LastnameFilled();
-            check = EmailFilled();
-            check = RadioButtonChecked();
-            check = DatePicked();
+            bool check1 = FirstnameFilled();
+            bool check2 = LastnameFilled();
+            bool check3 = EmailFilled();
+            bool check4 = RadioButtonChecked();
+            bool check5 = DatePicked();
             
-            if (check = true)
+            if (check1 && check2 && check3 && check4 && check5)
             {
                 return true;
             }
