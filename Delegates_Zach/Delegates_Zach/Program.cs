@@ -65,3 +65,5 @@ namespace Delegates_Zach
         
     }
 }
+
+/* Sehr gute Beschreibung und Codebeispsiel! Danke! */
