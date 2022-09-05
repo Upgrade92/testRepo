@@ -17,9 +17,11 @@ namespace EventExample
             set 
             {
                 this.health = value;
-                this.OnHealthChanged?.Invoke(this, this.health);
+                this.OnHealthChanged?.Invoke(this, this.health);  // Kann OnHealthChanged auch null sein? 
             } 
         }
         public event EventHandler<int> OnHealthChanged;
     }
 }
+
+// Eventsbeispiel von der Microsoftseite od.?! 
