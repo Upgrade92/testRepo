@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace EventExample
 {
     internal class Program
@@ -17,7 +19,7 @@ namespace EventExample
             };
 
             player.OnHealthChanged += PlayerOnHealthChanged;
-            player.Health = 200;
+          //  player.Health = 200; // <--  Eine erneute Zuweisung ist hier nicht nötig, da die Werte für Health bereits bei der der Objekterstellung zugewiesen wurden (Zeile 16)
 
             for(int i = 0; i < 10; i++)
             {
@@ -31,5 +33,13 @@ namespace EventExample
             var player = (Player)sender;
             Console.WriteLine(player.Health);
         }
+        
+        
     }
 }
+
+/* Gut gemacht, trauen Sie sich bitte mehr zu und schreiben Sie mit eigenen Ideen, ihre eigenen Programme.
+   Das umschreiben von bereits besteheneden Beispielen entspricht sicher nicht dem was sie Können. ;-)
+*/
+
+
